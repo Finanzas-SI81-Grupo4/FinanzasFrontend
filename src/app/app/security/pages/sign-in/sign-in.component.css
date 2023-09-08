@@ -1,3 +1,7 @@
+*{
+  font-family: 'Inter' !important; 
+}
+
 /*Background*/
 .content-log {
   display: flex;
@@ -21,6 +25,7 @@
 }
 .welcome-text{
   font-size: 30px;
+  font-weight: 500;
   color: #000000;
   padding: 5px 5px 5px;
 }
@@ -50,13 +55,14 @@
 
 .form-group {
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .field-form {
   display: block;
   margin-bottom: 5px;
   text-align: left;
-  color: #6c6c6c;
+  color: #262626;
 }
 
 
@@ -67,6 +73,10 @@ input[type="password"] {
   border: 1px solid #dadada;
   border-radius: 10px;
   box-sizing: border-box;
+}
+
+input::placeholder{
+  color: #C5CACF;
 }
 
 button-container {
@@ -113,6 +123,12 @@ button:hover {
   font-size: 15px;
   font-weight: normal;
 }
+
+.sign-up-link a{
+  text-decoration: none;
+  color: #6375f0;
+}
+
 /*HACE responsive a lo que se incluya thom yorke t amo*/
 @media (min-width: 768px) {
   .login-card {
