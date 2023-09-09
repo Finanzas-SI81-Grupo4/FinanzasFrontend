@@ -1,0 +1,142 @@
+*{
+    font-family: 'Inter' !important;
+   
+  }
+  
+  /*Background*/
+  .content-signup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: linear-gradient(to right, #7ac3fc, #6375f0);
+    }
+    /*primer div */
+    .signup-content{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 1000px;
+      padding: 30px;
+    }
+    /*HEADER Sign-up Y MENSAJE*/
+    .header-signup-card {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .welcome-text{
+      font-size: 30px;
+      font-weight: 500;
+      padding: 5px 5px 5px;
+    }
+    .header-signup-card mat-card-header mat-card-subtitle {
+      color: #949494 !important;
+    }
+    /*INPUT BOX*/
+    .signup-card {
+      text-align: center;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      padding: 30px; /* relleno dentro del card */
+      box-sizing: border-box;
+      font-size: 14px;
+      margin: 10px; /* alrededor del card */
+    }
+    
+    
+    .signup-form {
+      margin: 3px;
+      text-align: left;
+      font-size: 14px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .field-form {
+      display: block;
+      margin-bottom: 5px;
+      text-align: left;
+      color: #262626;
+    }
+    
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dadada;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+  
+    input::placeholder{
+      color: #C5CACF;
+    }
+  
+    button-container {
+      position: relative;
+    }
+    
+    button {
+      padding: 15px 20px;
+      background-color: #6375f0;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      background-color: #6375f0;
+    }
+    .forgot-password-content{
+      display: flex;
+      justify-content: end;
+      padding-left:10px;
+      padding-bottom: 10px;
+    }
+    .forgot-password-link{
+      color: #6375f0;
+      font-size: 15px;
+      font-weight: normal;
+    }
+    .sign-in-content{
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px 10px;
+    }
+    .question-text{
+      color: #949494;
+      font-size: 15px;
+    }
+    .sign-in-link{
+      font-size: 15px;
+      font-weight: normal;
+    }
+    
+    .sign-in-link a{
+      text-decoration: none;
+      color: #6375f0;
+    }
+    
+    
+    @media (min-width: 768px) {
+      .login-card {
+    
+        width: 90%;
+        font-size: 18px;
+      }
+    
+      input[type="text"],
+      input[type="password"] {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
