@@ -93,6 +93,6 @@
   color: #6375f0;
 }
 
-.passwordmatcherror{
+.passwordmatcherror, .password-length{
   padding-top: 8px;
 }
