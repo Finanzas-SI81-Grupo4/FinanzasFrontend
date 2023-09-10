@@ -34,6 +34,25 @@
 
           <div class="form-group">
             <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Enter dni</mat-label>
+              <input formControlName="dni" matInput placeholder="Enter DNI" required/>
+              <mat-error *ngIf="!signUpForm.controls['dni'].valid">
+                  DNI is required
+              </mat-error>
+            </mat-form-field>
+
+            <div *ngIf="(signUpForm.get('dni')?.hasError('maxlength') && signUpForm.get('dni')?.touched)">
+              <mat-error class="password-length">El numero debe tener 11 dígitos</mat-error>
+            </div>
+  
+            <div *ngIf="(signUpForm.get('dni')?.hasError('minlength') && signUpForm.get('dni')?.touched)">
+              <mat-error class="password-length">El numero debe tener 8 dígitos</mat-error>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="full-width" appearance="outline">
               <mat-label>Email</mat-label>
               <input formControlName="email" matInput placeholder="Enter email address" required/>
               <mat-error *ngIf="!signUpForm.controls['email'].valid">
