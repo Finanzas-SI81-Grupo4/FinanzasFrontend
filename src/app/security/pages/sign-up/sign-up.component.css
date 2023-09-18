@@ -1,3 +1,7 @@
+*{
+  overflow-y: hidden;
+}
+
 .content-register{
   display: flex;
   justify-content: center;
@@ -42,7 +46,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
-  padding: 45px; /* relleno dentro del card */
+  padding: 10px 45px; /* relleno dentro del card */
   box-sizing: border-box;
   font-size: 14px;
 }
