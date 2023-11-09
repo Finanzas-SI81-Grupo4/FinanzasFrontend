@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import {SignInServiceService} from "../../../services/sign-in-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -11,10 +12,12 @@ export class SignInComponent implements OnInit{
 
   hide: boolean = true;
   loginForm: FormGroup;
+  result:any;
 
   constructor(
     private formBuilder: FormBuilder,
-    private signInService: SignInServiceService // Inyecta el servicio en el constructor
+    private signInService: SignInServiceService,
+    private router:Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required]],
@@ -22,29 +25,33 @@ export class SignInComponent implements OnInit{
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onLogin() {
     if (!this.loginForm.valid) {
       return;
     }
 
-    const username = this.loginForm.get('email')?.value;
+    const email = this.loginForm.get('email')?.value;
     const password = this.loginForm.get('password')?.value;
 
-    this.signInService.login(username, password).subscribe(
+    this.signInService.login(email, password).subscribe(
       (response) => {
-        // Manejar la respuesta del backend para el inicio de sesión, por ejemplo, guardar el token JWT.
+        this.result=response;
         console.log(response);
+        if(this.result){
+          sessionStorage.setItem('userid', this.result.id);
+          console.log('funciono')
+          this.router.navigate(['home']);
+
+        }
       },
       (error) => {
-        // Manejar errores de inicio de sesión, por ejemplo, mostrar un mensaje de error.
+
         console.error(error);
       }
     );
   }
-
 
 
 }

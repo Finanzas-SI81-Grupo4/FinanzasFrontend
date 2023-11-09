@@ -1,28 +1,18 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignInServiceService {
 
-  private backendUrl = 'http://localhost:8080/api/v1/users/auth'; // Reemplaza con la URL de tu backend
+  private apiUrl = 'http://localhost:8080/api/crediApp/v1/Customer';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  login(username: string, password: string) {
-    const body = {
-      username: username,
-      password: password
-    };
-    return this.http.post(`${this.backendUrl}/sign-in`, body);
-  }
-
-  signup(email: string, password: string) {
-    const body = {
-      email: email,
-      password: password
-    };
-    return this.http.post(`${this.backendUrl}/sign-up`, body);
+  login(email: string, password: string): Observable<any> {
+    const url = `${this.apiUrl}/email/${email}/password/${password}`;
+    return this.http.get(url);
   }
 }
