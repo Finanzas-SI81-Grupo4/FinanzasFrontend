@@ -10,14 +10,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { MatInputModule } from '@angular/material/input';
-import { AppRoutingModule } from './app-routing.module';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { SignUpComponent } from './security/pages/sign-up/sign-up.component';
-import { SignInComponent } from './security/pages/sign-in/sign-in.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SignUpComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
     HomeComponent
   ],
   imports: [
@@ -40,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    AppRoutingModule
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
