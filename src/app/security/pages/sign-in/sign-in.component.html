@@ -32,14 +32,7 @@
                   </mat-icon>
                 </button>
 
-          <div class="sign-up-content">
-            <label class="question-text">Don't have an account?</label>
-            <label class="sign-up-link">
-              <a routerLink="/sign-up">
-                Sign Up
-              </a>
-            </label>
-          </div>
+          
                 <mat-error *ngIf="loginForm.controls['password'] && !loginForm.controls['password'].valid">
                   Password is required
                 </mat-error>
