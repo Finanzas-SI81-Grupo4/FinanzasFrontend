@@ -107,3 +107,22 @@ img {
   max-width: 120px;
   filter: brightness(0) invert(1);
 }
+
+
+.logout-link {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+
+.logout-link mat-icon {
+  font-size: 40px;
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+}
