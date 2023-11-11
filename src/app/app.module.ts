@@ -21,7 +21,6 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     AppComponent,
     SignUpComponent,
     SignInComponent,
-    SignUpComponent,
     HomeComponent,
     CalculatorComponent
   ],

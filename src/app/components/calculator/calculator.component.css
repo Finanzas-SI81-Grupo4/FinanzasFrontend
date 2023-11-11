@@ -86,14 +86,14 @@ button[type="submit"]:hover {
 .back-button {
   position: absolute;
   top: 10px;
-  left: 10px; /* Ajusta la posición a la esquina superior izquierda */
+  left: 10px;
   color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-/* Estilo para el ícono del botón de retroceder */
+
 .back-button mat-icon {
   font-size: 40px;
   height: 40px;
