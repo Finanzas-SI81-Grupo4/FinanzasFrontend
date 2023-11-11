@@ -4,15 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .form-container {
   max-width: 1200px;
   min-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f0f0f0;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  background-color: #ffffff;
   text-align: center;
 }
 .column {
@@ -36,7 +37,7 @@ input {
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 15px;
   box-shadow: none;
   outline: none;
   transition: border-color 0.2s;
@@ -50,13 +51,52 @@ button[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #570de8;
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #570de8;
+}
+
+.logout-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.icon-size {
+  font-size: 40px;
+}
+/*AAAL FIN FUNCIONA EL ICONO DE LOGOUT*/
+
+.logout-link mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Ajusta la posición a la esquina superior izquierda */
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para el ícono del botón de retroceder */
+.back-button mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
 }
