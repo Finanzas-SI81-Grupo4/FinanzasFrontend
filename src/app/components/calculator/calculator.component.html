@@ -1,0 +1,86 @@
+<div class="background-container">
+  <div class="form-container">
+
+    <form (ngSubmit)="enviarDatos()">
+      <div class="column">
+        <label for="precioVehiculo">Precio del vehículo:</label>
+        <input type="number" id="precioVehiculo" [(ngModel)]="cronograma.precioVehiculo" name="precioVehiculo" required>
+
+        <label for="marcaVehiculo">Marca del vehículo:</label>
+        <input type="text" id="marcaVehiculo" [(ngModel)]="cronograma.marcaVehiculo" name="marcaVehiculo" required>
+
+        <label for="modeloVehiculo">Modelo del vehículo:</label>
+        <input type="text" id="modeloVehiculo" [(ngModel)]="cronograma.modeloVehiculo" name="modeloVehiculo" required>
+
+
+        <label for="tipoMoneda">tipoMoneda:</label>
+        <input type="text" id="tipoMoneda" [(ngModel)]="cronograma.tipoMoneda" name="tipoMoneda" required>
+
+
+
+
+        <label for="numeroAnios">Número de años:</label>
+        <input type="number" id="numeroAnios" [(ngModel)]="cronograma.numeroAnios" name="numeroAnios" required>
+
+        <label for="porcentajeCuotaInicial">Porcentaje de la cuota inicial:</label>
+        <input type="number" id="porcentajeCuotaInicial" [(ngModel)]="cronograma.porcentajeCuotaInicial" name="porcentajeCuotaInicial" required>
+
+
+        <label for="tipoTasaInteres">tipoTasaInteres:</label>
+        <input type="text" id="tipoTasaInteres" [(ngModel)]="cronograma.tipoTasaInteres" name="tipoTasaInteres" required>
+
+        <label for="plazoTasaInteres">plazoTasaInteres:</label>
+        <input type="text" id="plazoTasaInteres" [(ngModel)]="cronograma.plazoTasaInteres" name="plazoTasaInteres" required>
+
+        <label for="porcentajeTasaInteres">porcentajeTasaInteres:</label>
+        <input type="number" id="porcentajeTasaInteres" [(ngModel)]="cronograma.porcentajeTasaInteres" name="modeloVehiculo" required>
+
+        <label for="capitalizacion">capitalizacion:</label>
+        <input type="text" id="capitalizacion" [(ngModel)]="cronograma.capitalizacion" name="capitalizacion" required>
+
+        <label for="plazoDeGracia">plazoDeGracia:</label>
+        <input type="text" id="plazoDeGracia" [(ngModel)]="cronograma.plazoDeGracia" name="plazoDeGracia" required>
+
+      </div>
+      <div class="column">
+        <label for="tiempoPlazoDeGracia">tiempoPlazoDeGracia:</label>
+        <input type="number" id="tiempoPlazoDeGracia" [(ngModel)]="cronograma.tiempoPlazoDeGracia" name="tiempoPlazoDeGracia" required>
+
+        <label for="porcentajeSeguroDesgravamen">porcentajeSeguroDesgravamen:</label>
+        <input type="number" id="porcentajeSeguroDesgravamen" [(ngModel)]="cronograma.porcentajeSeguroDesgravamen" name="porcentajeSeguroDesgravamen" required>
+
+        <label for="tiempoSeguroDesgravamen">tiempoSeguroDesgravamen:</label>
+        <input type="text" id="tiempoSeguroDesgravamen" [(ngModel)]="cronograma.tiempoSeguroDesgravamen" name="tiempoSeguroDesgravamen" required>
+
+        <label for="porcentajeSeguroVehicular">porcentajeSeguroVehicular:</label>
+        <input type="number" id="porcentajeSeguroVehicular" [(ngModel)]="cronograma.porcentajeSeguroVehicular" name="porcentajeSeguroVehicular" required>
+
+        <label for="tiempoSeguroVehicular">tiempoSeguroVehicular:</label>
+        <input type="text" id="tiempoSeguroVehicular" [(ngModel)]="cronograma.tiempoSeguroVehicular" name="tiempoSeguroVehicular" required>
+
+        <label for="portes">portes:</label>
+        <input type="number" id="portes" [(ngModel)]="cronograma.portes" name="portes" required>
+
+        <label for="costosRegistrales">costosRegistrales:</label>
+        <input type="number" id="costosRegistrales" [(ngModel)]="cronograma.costosRegistrales" name="costosRegistrales" required>
+
+        <label for="costosNotariales">Modelo del vehículo:</label>
+        <input type="number" id="costosNotariales" [(ngModel)]="cronograma.costosNotariales" name="costosNotariales" required>
+
+        <label for="frecuenciaPago">frecuenciaPago:</label>
+        <input type="text" id="frecuenciaPago" [(ngModel)]="cronograma.frecuenciaPago" name="frecuenciaPago" required>
+
+        <label for="fechaInicio">fechaInicio:</label>
+        <input type="text" id="fechaInicio" [(ngModel)]="cronograma.fechaInicio" name="fechaInicio" required>
+
+        <label for="porcentajeCuotaFinal">porcentajeCuotaFinal:</label>
+        <input type="number" id="porcentajeCuotaFinal" [(ngModel)]="cronograma.porcentajeCuotaFinal" name="porcentajeCuotaFinal" required>
+
+
+      </div>
+      <button type="submit">Calcular</button>
+    </form>
+
+  </div>
+
+</div>
