@@ -6,6 +6,8 @@ import { SignInComponent } from './security/pages/sign-in/sign-in.component';
 
 import {HomeComponent} from "./components/home/home.component";
 import {CalculatorComponent} from "./components/calculator/calculator.component";
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 
 const routes: Routes = [
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: "sign-in", component: SignInComponent },
   {path:"home", component:HomeComponent },
   { path: "cotizar", component: CalculatorComponent },
+  { path: "catalogo", component: CatalogoComponent },
+  { path: "clientes", component: ClientesComponent },
   { path: "**", component: SignInComponent }
 ];
 

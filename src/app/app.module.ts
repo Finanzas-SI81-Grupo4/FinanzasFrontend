@@ -15,6 +15,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CalculatorComponent } from './components/calculator/calculator.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,9 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     SignUpComponent,
     SignInComponent,
     HomeComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    CatalogoComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +50,22 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     MatInputModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FormsModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
