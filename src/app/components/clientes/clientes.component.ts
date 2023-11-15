@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
 import { ActivatedRoute } from '@angular/router';
-import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
+
+
 
 @Component({
   selector: 'app-clientes',
@@ -10,32 +14,37 @@ import { Cliente } from 'src/app/models/cliente';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit{
-  displayedColumns: string[] = ['firstName','lastName','dni','noPhone','clientAddress'];
-  dataSource = new MatTableDataSource<Cliente>();
-  id!:number;
+  displayedColumns: string[] = ['id','cliente','dni','email','cronograma'];
+  dataSource!: MatTableDataSource<any>;
 
-  constructor(/*private clienteService: ClienteService,*/ private ActivatedRoute: ActivatedRoute, 
-    private activetedRoute: ActivatedRoute, private snackbar: MatSnackBar) { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
-    
-    //this.id = this.activetedRoute.snapshot.params['id'];
-    //this.getClientes(this.id);
+      this.getClientesList();
+  }
+
+  getClientesList(){
+    this.clienteService.getClientes().subscribe({
+      next:(res)=>{
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.sort=this.sort;
+        this.dataSource.paginator=this.paginator;
+      },
+      error:console.log,
+    });
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-  /*
-  getClientes(id:number) {
-    this.clienteService.getClientes(id).subscribe(
-      (data: Cliente[]) => {
-        this.dataSource = new MatTableDataSource(data);
-      }
-    )
-  }
-  */
 
 }
