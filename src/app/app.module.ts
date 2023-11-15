@@ -29,6 +29,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from "@angular/material/sort";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewEditClienteComponent } from './components/new-edit-cliente/new-edit-cliente.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     CalculatorComponent,
     CatalogoComponent,
-    ClientesComponent
+    ClientesComponent,
+    NewEditClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTableModule,
     MatSortModule,
     MatSnackBarModule,
-    NgbModule
+    NgbModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

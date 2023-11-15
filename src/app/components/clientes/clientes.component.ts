@@ -3,8 +3,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
-import { ActivatedRoute } from '@angular/router';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { MatDialog } from "@angular/material/dialog";
+import { NewEditClienteComponent } from '../new-edit-cliente/new-edit-cliente.component';
 
 
 
@@ -20,7 +21,8 @@ export class ClientesComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService,private _dialog: MatDialog, 
+    private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
       this.getClientesList();
@@ -46,5 +48,31 @@ export class ClientesComponent implements OnInit{
     }
   }
 
+  addClienteForm(){
+    const dialogRef=this._dialog.open(NewEditClienteComponent);
+    dialogRef.afterClosed().subscribe({
+      next:(val)=>{
+        if(val){
+          this.clienteService.getClientes();
+        }
+      }
+    })
+  }
+
+  openEditForm(data:any){
+    this._dialog.open(NewEditClienteComponent,{
+      data,
+    });
+  }
+  
+  deleteCliente(id:number){
+    this.clienteService.deleteCliente(id).subscribe({
+      next:()=>{
+        this.snackbar.open("El cliente se eliminó correctamente","OK",{duration:3000});
+        this.getClientesList();
+      },
+      error:console.log,
+    });
+  }
 
 }
