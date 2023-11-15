@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
   {path:"cotizar/respuesta",component:ResponseComponent},
-  { path: "**", component: HomeComponent },
+  { path: "**", component: HomeComponent }
 
 ];
 

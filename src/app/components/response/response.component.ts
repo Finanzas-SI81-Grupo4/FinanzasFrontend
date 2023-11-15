@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
+import {Cronograma} from "../../models/Cronograma";
 @Component({
   selector: 'app-response',
   templateUrl: './response.component.html',
@@ -17,6 +18,9 @@ export class ResponseComponent implements OnInit{
   'van',
   'tir',
   ];
+
+  cronograma  = new Cronograma;
+
   dataSource!: MatTableDataSource<any>;
 
   ngOnInit(): void {}
