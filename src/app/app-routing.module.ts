@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "cotizar", component: CalculatorComponent },
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
-  {path:"respuesta",component:ResponseComponent},
+  {path:"cotizar/respuesta",component:ResponseComponent},
   { path: "**", component: HomeComponent },
 
 ];
