@@ -13,10 +13,6 @@ body, html {
   background-size: cover;
 }
 
-.navbar {
-  background-color: transparent;
-  padding: 5px;
-}
 
 .navbar ul {
   list-style-type: none;
@@ -62,15 +58,20 @@ body, html {
     margin-right: 20px;
   }
 }
+.main{
+  height: calc(100vh - 92px);
+}
 
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 5px;
+  height: 75%;
   padding: 40px;
+
   flex: 1;
+
 }
 
 .title-container {
@@ -92,9 +93,9 @@ img {
 }
 
 .footer {
-  background-color: transparent;
   padding: 20px 0;
   text-align: center;
+  height: 10%;
 }
 
 .bank-logos {

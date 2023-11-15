@@ -26,7 +26,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { ResponseComponent } from './components/response/response.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     HomeComponent,
     CalculatorComponent,
     CatalogoComponent,
-    ClientesComponent
+    ClientesComponent,
+    ResponseComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatNativeDateModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    MatTableModule 
+    MatTableModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

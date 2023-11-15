@@ -1,18 +1,10 @@
 <div class="home-container">
   <!-- MLOGOUTTT FUNCIONA -->
-  <a routerLink="/sign-in" class="logout-link">
-    <mat-icon class="icon-size">exit_to_app</mat-icon>
-  </a>
-  <!-- navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a routerLink="/home">Inicio</a></li>
-      <li><a routerLink="/home">Información</a></li>
-      <li><a routerLink="/home">Modelos</a></li>
-      <li><a routerLink="/cotizar" class="cotizar-button">Cotizar</a></li>
-    </ul>
-  </nav>
 
+  <!-- navbar -->
+  <app-navigation-bar></app-navigation-bar>
+
+<div class="main">
   <div class="main-content">
     <div class="title-container">
       <h1>El auto de tus sueños te espera</h1>
@@ -30,4 +22,6 @@
       <img src="/assets/images/Scotiabank.png" alt="banco1" />
     </div>
   </footer>
+</div>
+
 </div>

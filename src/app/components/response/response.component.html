@@ -1,0 +1,68 @@
+<div class="background-container">
+
+  <div class="conteiner">
+
+    <div class="summary">
+
+    </div>
+    <div class="table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="banco">
+          <th mat-header-cell *matHeaderCellDef> Banco </th>
+          <td mat-cell *matCellDef="let element"> {{element.banco}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="numeroCuotas">
+          <th mat-header-cell *matHeaderCellDef> Numero de cuotas </th>
+          <td mat-cell *matCellDef="let element"> {{element.numeroCuotas}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="cuotaMensual">
+          <th mat-header-cell *matHeaderCellDef> Cuota mensual </th>
+          <td mat-cell *matCellDef="let element"> {{element.cuotaMensual}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="cuotaTotal">
+          <th mat-header-cell *matHeaderCellDef> Total </th>
+          <td mat-cell *matCellDef="let element"> {{element.cuotaTotal}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fechaInicio">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fechaFinal">
+          <th mat-header-cell *matHeaderCellDef> Fecha final </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaFinal}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tasaInteres">
+          <th mat-header-cell *matHeaderCellDef> Tasa de interes </th>
+          <td mat-cell *matCellDef="let element"> {{element.tasaInteres}} </td>
+        </ng-container>
+        <ng-container matColumnDef="van">
+          <th mat-header-cell *matHeaderCellDef> VNA </th>
+          <td mat-cell *matCellDef="let element"> {{element.van}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tir">
+          <th mat-header-cell *matHeaderCellDef> TIR </th>
+          <td mat-cell *matCellDef="let element"> {{element.tir}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+
+
+
+  </div>
+</div>
