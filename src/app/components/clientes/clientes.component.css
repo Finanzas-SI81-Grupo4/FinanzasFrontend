@@ -15,3 +15,7 @@ table{
   background-color: #572df0dc;
   color: white;
 }
+
+button{
+  border: none;
+}

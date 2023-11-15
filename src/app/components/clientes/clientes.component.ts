@@ -14,7 +14,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit{
-  displayedColumns: string[] = ['id','cliente','dni','email','cronograma'];
+  displayedColumns: string[] = ['acciones','id','cliente','dni','email','cronograma'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
