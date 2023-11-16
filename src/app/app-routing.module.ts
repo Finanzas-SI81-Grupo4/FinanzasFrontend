@@ -8,6 +8,8 @@ import {HomeComponent} from "./components/home/home.component";
 import {CalculatorComponent} from "./components/calculator/calculator.component";
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+import { CronogramaComponent } from './components/cronograma/cronograma.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: "cotizar", component: CalculatorComponent },
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
+  { path: "cotizaciones/:id", component: CotizacionesComponent },
+  { path: "cronograma", component: CronogramaComponent },
   { path: "**", component: SignInComponent }
 ];
 

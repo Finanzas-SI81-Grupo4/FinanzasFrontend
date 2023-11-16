@@ -6,6 +6,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import { ClienteService } from 'src/app/services/cliente.service';
 import { MatDialog } from "@angular/material/dialog";
 import { NewEditClienteComponent } from '../new-edit-cliente/new-edit-cliente.component';
+import { CronogramaService } from 'src/app/services/cronograma.service';
 
 
 
@@ -15,14 +16,14 @@ import { NewEditClienteComponent } from '../new-edit-cliente/new-edit-cliente.co
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit{
-  displayedColumns: string[] = ['acciones','id','cliente','dni','email','cronograma'];
+  displayedColumns: string[] = ['acciones','id','cliente','dni','email','cotizacion'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService: ClienteService,private _dialog: MatDialog, 
-    private snackbar:MatSnackBar) { }
+  constructor(private clienteService: ClienteService,private cronogramaService:CronogramaService
+    ,private _dialog: MatDialog,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
       this.getClientesList();

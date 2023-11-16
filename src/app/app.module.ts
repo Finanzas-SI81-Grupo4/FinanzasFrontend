@@ -31,6 +31,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewEditClienteComponent } from './components/new-edit-cliente/new-edit-cliente.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import { CronogramaComponent } from './components/cronograma/cronograma.component';
+import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     CalculatorComponent,
     CatalogoComponent,
     ClientesComponent,
-    NewEditClienteComponent
+    NewEditClienteComponent,
+    CronogramaComponent,
+    CotizacionesComponent
   ],
   imports: [
     BrowserModule,

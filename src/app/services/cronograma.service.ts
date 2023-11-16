@@ -12,6 +12,15 @@ export class CronogramaService {
 
   constructor(private http: HttpClient) {}
 
+  getCronogramas():Observable<any>{
+    return this.http.get('http://localhost:3000/cronograma');
+  }
+
+  getCronogramasByClientId(id: number):Observable<any>{
+    return this.http.get(`http://localhost:3000/cronograma/${id}`);
+  }
+
+
   calcularCronograma(customerId: number, cronograma: Cronograma): Observable<any> {
     const url = `${this.apiUrl}/${customerId}/calculoCronograma`;
     console.log('Datos a enviar:', cronograma);

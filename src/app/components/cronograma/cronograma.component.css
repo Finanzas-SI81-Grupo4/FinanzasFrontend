@@ -1,21 +1,17 @@
 table{
   width: 100%;
 }
-
+  
 .title{
   color: whitesmoke;
 }
-
-.mat-form-field {
+  
+.mat-form-field{
   font-size: 14px;
   width: 100%;
 }
-
-#button_clientes{
-  background-color: #572df0dc;
-  color: white;
-}
-
+  
 button{
   border: none;
 }
+  
