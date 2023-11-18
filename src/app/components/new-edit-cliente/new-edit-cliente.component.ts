@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from 'src/app/services/cliente.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-edit-cliente',
@@ -23,10 +23,11 @@ export class NewEditClienteComponent implements OnInit{
     @Inject(MAT_DIALOG_DATA) public data:any
   ) {
     this.clienteForm=this._fb.group({
-      firstName:'',
+      name:'',
       lastName:'',
       dni:'',
-      email:''
+      email:'',
+      password: "123"
     })
   }
 

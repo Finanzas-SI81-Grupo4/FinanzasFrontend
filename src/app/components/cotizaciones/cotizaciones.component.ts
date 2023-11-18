@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatSort} from "@angular/material/sort";
-import {MatPaginator} from "@angular/material/paginator";
 import { MatTableDataSource } from '@angular/material/table';
 import { CronogramaService } from 'src/app/services/cronograma.service';
 import { ActivatedRoute } from '@angular/router';
@@ -22,13 +20,9 @@ export class CotizacionesComponent implements OnInit{
   tasa!: String;
   pcuotainicial!: String;
   id!: number;
-  
   displayedColumns: string[] = ['cliente_id','marca','modelo','moneda','ncuotas',
   'precio','pgracia','tasa','pcuotainicial','id','accion'];
-    dataSource!: MatTableDataSource<any>;
-  
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
-    @ViewChild(MatSort) sort!: MatSort;
+  dataSource!: MatTableDataSource<any>;
   
     constructor(private cronogramaService: CronogramaService, private activated: ActivatedRoute) { }
   

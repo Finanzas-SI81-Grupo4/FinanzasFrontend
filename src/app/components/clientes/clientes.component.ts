@@ -22,8 +22,7 @@ export class ClientesComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService: ClienteService,private cronogramaService:CronogramaService
-    ,private _dialog: MatDialog,private snackbar:MatSnackBar) { }
+  constructor(private clienteService: ClienteService, private _dialog: MatDialog,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
       this.getClientesList();

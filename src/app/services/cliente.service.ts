@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import { Cliente } from '../models/Cliente';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
+  private apiUrl = 'https://opposite-scarf-production.up.railway.app/api/finanzasgrupo4/v1/Customer';
+
   constructor(private http:HttpClient) { }
 
   getClientes():Observable<any>{
-    return this.http.get('http://localhost:3000/cliente');
+    return this.http.get(this.apiUrl);
   }
 
-  addCliente(data:any):Observable<any>{
-    return this.http.post('http://localhost:3000/cliente',data);
+  addCliente(data:Cliente):Observable<any>{
+    console.log(data);
+    return this.http.post(this.apiUrl,data); 
   }
 
   updateCliente(id:number,data:any):Observable<any>{
