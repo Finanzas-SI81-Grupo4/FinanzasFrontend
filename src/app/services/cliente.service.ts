@@ -17,16 +17,17 @@ export class ClienteService {
   }
 
   addCliente(data:Cliente):Observable<any>{
-    console.log(data);
     return this.http.post(this.apiUrl,data); 
   }
 
   updateCliente(id:number,data:any):Observable<any>{
-    return this.http.put(`http://localhost:3000/cliente/${id}`,data);
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put(url,data);
   }
 
   deleteCliente(id:number):Observable<any>{
-    return this.http.delete(`http://localhost:3000/cliente/${id}`);
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete(url);
   }
 
 }
