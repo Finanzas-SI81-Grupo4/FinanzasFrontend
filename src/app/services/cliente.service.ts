@@ -19,12 +19,7 @@ export class ClienteService {
   addCliente(data:Cliente):Observable<any>{
     return this.http.post(this.apiUrl,data); 
   }
-
-  updateCliente(id:number,data:any):Observable<any>{
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put(url,data);
-  }
-
+  
   deleteCliente(id:number):Observable<any>{
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);

@@ -33,19 +33,6 @@ export class NewEditClienteComponent implements OnInit{
 
   onSubmitFunction(){
     if(this.clienteForm.valid){
-      if(this.data){
-        this.clienteService.updateCliente(this.data.id, this.clienteForm.value).subscribe({
-          next:()=>{
-            this.snackbar.open("Datos actualizados correctamente","OK",{duration:3000});
-            this._dialogRef.close(true);
-            this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => 
-            { this.router.navigate(['clientes']); }); 
-          },
-          error:(err:any)=>{
-            console.error(err);
-          },
-        });
-      }else{
         this.clienteService.addCliente(this.clienteForm.value).subscribe({
           next:()=>{
             this.snackbar.open("El cliente se agregó correctamente","OK",{duration:3000});
@@ -59,8 +46,7 @@ export class NewEditClienteComponent implements OnInit{
         });
       }
     }
-  }
-
+  
   ngOnInit(): void {
     this.clienteForm.patchValue(this.data);
   }
