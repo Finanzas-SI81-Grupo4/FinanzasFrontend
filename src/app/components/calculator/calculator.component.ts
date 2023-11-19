@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Cronograma} from "../../models/Cronograma";
 import {CronogramaService} from "../../services/cronograma.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-calculator',
@@ -12,7 +13,7 @@ export class CalculatorComponent implements OnInit{
   cronograma: Cronograma = new Cronograma();
   customerId: number = 1; // Reemplaza con el valor correcto
 
-  constructor(private cronogramaService: CronogramaService) {}
+  constructor(private cronogramaService: CronogramaService,private router: Router) {}
 
   ngOnInit() {
     // Obtén el valor del customerId desde el sessionStorage
@@ -31,6 +32,9 @@ export class CalculatorComponent implements OnInit{
       .subscribe(
         (response) => {
           console.log('Respuesta del servidor:', response);
+          this.router.navigate(['/cronograma', this.customerId]);
+
+
         },
         (error) => {
           console.error('Error al enviar datos:', error);

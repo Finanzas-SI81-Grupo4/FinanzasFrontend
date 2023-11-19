@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class SignUpService {
 
-  private baseUrl = 'http://localhost:8080/api/crediApp/v1/Customer';
+  private baseUrl = 'http://opposite-scarf-production.up.railway.app/api/finanzasgrupo4/v1/Customer';
 
   constructor(private http: HttpClient) {}
 
