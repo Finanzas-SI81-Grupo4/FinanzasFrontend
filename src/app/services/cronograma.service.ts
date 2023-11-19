@@ -8,9 +8,18 @@ import {Observable} from "rxjs";
 })
 export class CronogramaService {
 
-  private apiUrl = 'http://localhost:8080/api/crediApp/v1/cronograma';
+  private apiUrl = 'http://opposite-scarf-production.up.railway.app/api/finanzasgrupo4/v1/cuota';
 
   constructor(private http: HttpClient) {}
+
+  getCronogramas():Observable<any>{
+    return this.http.get('http://localhost:3000/cronograma');
+  }
+
+  getCronogramasByClientId(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}/cuota`);
+  }
+
 
   calcularCronograma(customerId: number, cronograma: Cronograma): Observable<any> {
     const url = `${this.apiUrl}/${customerId}/calculoCronograma`;

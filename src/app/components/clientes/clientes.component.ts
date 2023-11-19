@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
-import { Cliente } from 'src/app/models/cliente';
+import {MatSort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
+import { ClienteService } from 'src/app/services/cliente.service';
+import { MatDialog } from "@angular/material/dialog";
+import { NewEditClienteComponent } from '../new-edit-cliente/new-edit-cliente.component';
+import { CronogramaService } from 'src/app/services/cronograma.service';
+import {CronogramaComponent} from "../cronograma/cronograma.component";
+
+
 
 @Component({
   selector: 'app-clientes',
@@ -10,32 +17,65 @@ import { Cliente } from 'src/app/models/cliente';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit{
-  displayedColumns: string[] = ['firstName','lastName','dni','noPhone','clientAddress'];
-  dataSource = new MatTableDataSource<Cliente>();
-  id!:number;
+  displayedColumns: string[] = ['acciones','id','cliente','dni','email','cotizacion'];
+  dataSource!: MatTableDataSource<any>;
 
-  constructor(/*private clienteService: ClienteService,*/ private ActivatedRoute: ActivatedRoute, 
-    private activetedRoute: ActivatedRoute, private snackbar: MatSnackBar) { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private clienteService: ClienteService, private _dialog: MatDialog,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
-    
-    //this.id = this.activetedRoute.snapshot.params['id'];
-    //this.getClientes(this.id);
+      this.getClientesList();
+  }
+
+  getClientesList(){
+    this.clienteService.getClientes().subscribe({
+      next:(res)=>{
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.sort=this.sort;
+        this.dataSource.paginator=this.paginator;
+      },
+      error:console.log,
+    });
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-  /*
-  getClientes(id:number) {
-    this.clienteService.getClientes(id).subscribe(
-      (data: Cliente[]) => {
-        this.dataSource = new MatTableDataSource(data);
+  addClienteForm(){
+    const dialogRef=this._dialog.open(NewEditClienteComponent);
+    dialogRef.afterClosed().subscribe({
+      next:(val)=>{
+        if(val){
+          this.clienteService.getClientes();
+        }
       }
-    )
+    })
   }
-  */
+
+  openEditForm(data:any){
+    this._dialog.open(NewEditClienteComponent,{
+      data,
+    });
+  }
+
+
+
+  deleteCliente(id:number){
+    this.clienteService.deleteCliente(id).subscribe({
+      next:()=>{
+        this.snackbar.open("El cliente se eliminó correctamente","OK",{duration:3000});
+        this.getClientesList();
+      },
+      error:console.log,
+    });
+  }
 
 }

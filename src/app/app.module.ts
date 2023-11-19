@@ -26,9 +26,20 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { ResponseComponent } from './components/response/response.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
+
+import { MatSortModule } from "@angular/material/sort";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewEditClienteComponent } from './components/new-edit-cliente/new-edit-cliente.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { CronogramaComponent } from './components/cronograma/cronograma.component';
+import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +49,14 @@ import {MatMenuModule} from '@angular/material/menu';
     CalculatorComponent,
     CatalogoComponent,
     ClientesComponent,
+
     ResponseComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+
+    NewEditClienteComponent,
+    CronogramaComponent,
+    CotizacionesComponent
+
   ],
   imports: [
     BrowserModule,
@@ -70,7 +87,14 @@ import {MatMenuModule} from '@angular/material/menu';
     MatAutocompleteModule,
     MatCheckboxModule,
     MatTableModule,
-    MatMenuModule
+
+    MatMenuModule,
+
+    MatSortModule,
+    MatSnackBarModule,
+    NgbModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

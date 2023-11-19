@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit {
     this.customerService.registerCustomer(customerData).subscribe(
       (response) => {
         this.router.navigate(['sign-in']);
-        console.log('Funciona registroo:', response);
+        console.log('Funciona registro:', response);
       },
       (error) => {
         console.error('Error en registro:', error);
