@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
   { path: "cotizaciones/:id", component: CotizacionesComponent },
-  { path: "cronograma", component: CronogramaComponent },
+  { path: "cronograma/:id", component: CronogramaComponent },
   { path: "**", component: SignInComponent }
 ];
 

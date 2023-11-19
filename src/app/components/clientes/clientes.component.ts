@@ -7,6 +7,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 import { MatDialog } from "@angular/material/dialog";
 import { NewEditClienteComponent } from '../new-edit-cliente/new-edit-cliente.component';
 import { CronogramaService } from 'src/app/services/cronograma.service';
+import {CronogramaComponent} from "../cronograma/cronograma.component";
 
 
 
@@ -64,7 +65,9 @@ export class ClientesComponent implements OnInit{
       data,
     });
   }
-  
+
+
+
   deleteCliente(id:number){
     this.clienteService.deleteCliente(id).subscribe({
       next:()=>{
