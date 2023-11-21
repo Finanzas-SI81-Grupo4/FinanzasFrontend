@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class CronogramaService {
 
-  private apiUrl = 'http://opposite-scarf-production.up.railway.app/api/finanzasgrupo4/v1/cuota';
+  private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/cuota';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class CronogramaService {
 
 
   calcularCronograma(customerId: number, cronograma: Cronograma): Observable<any> {
-    const url = `${this.apiUrl}/${customerId}/cuota`;
+    const url = `${this.apiUrl}/${customerId}/hallarcuota`;
     console.log('Datos a enviar:', cronograma);
     return this.http.post(url, cronograma);
   }

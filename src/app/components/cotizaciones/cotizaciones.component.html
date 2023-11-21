@@ -6,7 +6,18 @@
     <br>
     <br>
 
+  <div class="row">
+    <div class="col-md-6 ">
+      <mat-label>Realiza tu cotizacion</mat-label>
+    </div>
+    <div class="col-md-6 text-end">
+      <button mat-raised-button id="button_cotizacion" [routerLink]="'/cotizar/' + cliente_id">Cotizar</button>
+    </div>
+  </div>
 
+  <br>
+  <br>
+  <br>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
 

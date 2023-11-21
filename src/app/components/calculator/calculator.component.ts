@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Cronograma} from "../../models/Cronograma";
 import {CronogramaService} from "../../services/cronograma.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-calculator',
@@ -11,28 +11,25 @@ import {Router} from "@angular/router";
 export class CalculatorComponent implements OnInit{
 
   cronograma: Cronograma = new Cronograma();
-  customerId: number = 1; // Reemplaza con el valor correcto
+  customerId!: number; // Reemplaza con el valor correcto
 
-  constructor(private cronogramaService: CronogramaService,private router: Router) {}
+  constructor(private cronogramaService: CronogramaService,private router: Router,private activated: ActivatedRoute) {}
 
   ngOnInit() {
-    // Obtén el valor del customerId desde el sessionStorage
-    const userId = sessionStorage.getItem('userid');
+    this.customerId = this.activated.snapshot.params['customerId'];
 
-    if (userId) {
-      this.customerId = parseInt(userId, 10);
-    } else {
-      this.customerId = 1; // Valor predeterminado si no hay usuario en sesión
-    }
+    console.log('IDEDDDDD a enviar:', this.customerId);
   }
 
   enviarDatos(): void {
+
+
     this.cronogramaService
       .calcularCronograma(this.customerId, this.cronograma)
       .subscribe(
         (response) => {
           console.log('Respuesta del servidor:', response);
-          this.router.navigate(['/cronograma', this.customerId]);
+          this.router.navigate(['/cotizaciones', this.customerId]);
 
 
         },

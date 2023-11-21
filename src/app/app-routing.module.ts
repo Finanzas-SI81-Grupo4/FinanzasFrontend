@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "sign-up", component: SignUpComponent },
   { path: "sign-in", component: SignInComponent },
   {path:"home", component:HomeComponent },
-  { path: "cotizar", component: CalculatorComponent },
+  { path: "cotizar/:customerId", component: CalculatorComponent },
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
 
