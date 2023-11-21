@@ -8,5 +8,4 @@ export class Response{
   tasaInteres: number = 0;
   van: number = 0;
   tir: number = 0;
-
 }

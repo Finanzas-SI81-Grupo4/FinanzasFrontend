@@ -13,8 +13,8 @@ export class CronogramaService {
   constructor(private http: HttpClient) {}
 
 
-  getCronogramasByClientId(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}/cuota`);
+  getCronogramasByClientId(id_cliente: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id_cliente}/cuota`);
   }
 
 

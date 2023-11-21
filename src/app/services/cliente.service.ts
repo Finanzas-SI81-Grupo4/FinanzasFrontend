@@ -8,7 +8,7 @@ import { Cliente } from '../models/cliente';
 })
 export class ClienteService {
 
-  private apiUrl = 'https://opposite-scarf-production.up.railway.app/api/finanzasgrupo4/v1/Customer';
+  private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/Customer;';
 
   constructor(private http:HttpClient) { }
 
@@ -23,6 +23,11 @@ export class ClienteService {
   deleteCliente(id:number):Observable<any>{
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
+  }
+  get_cronograma_cliente(idCliente: number, idCronograma: number): Observable<any> {
+    const url = `${this.apiUrl}/id/${idCliente}/cronograma/${idCronograma}`;
+
+    return this.http.get(url);
   }
 
 }
