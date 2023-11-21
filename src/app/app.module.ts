@@ -38,6 +38,7 @@ import { NewEditClienteComponent } from './components/new-edit-cliente/new-edit-
 import { MatDialogModule } from "@angular/material/dialog";
 import { CronogramaComponent } from './components/cronograma/cronograma.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -93,7 +94,8 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
     MatSortModule,
     MatSnackBarModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
 
   ],
   providers: [],
