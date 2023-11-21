@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CronogramaService } from 'src/app/services/cronograma.service';
 import { ActivatedRoute } from '@angular/router';
@@ -18,8 +18,7 @@ export class CotizacionesComponent implements OnInit{
     constructor(private cronogramaService: CronogramaService, private activated: ActivatedRoute) { }
 
     ngOnInit(): void {
-        this.getCotizacionesIdList();
-
+      this.getCotizacionesIdList();
     }
 
     getCotizacionesIdList(){

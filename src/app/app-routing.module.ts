@@ -11,6 +11,7 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 import { CronogramaComponent } from './components/cronograma/cronograma.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "cotizar", component: CalculatorComponent },
   { path: "catalogo", component: CatalogoComponent },
   { path: "clientes", component: ClientesComponent },
+  { path: "contacto", component: ContactoComponent },
 
   { path: "cotizaciones/:id", component: CotizacionesComponent },
   { path: "cronograma/:id", component: CronogramaComponent },

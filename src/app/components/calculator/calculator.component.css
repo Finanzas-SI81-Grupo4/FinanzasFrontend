@@ -49,15 +49,18 @@ form {
   width: 45%;
   margin: 1%;
 }
+
 .column label {
   text-align: left;
   font-weight: bold;
 }
+
 label {
   font-weight: bold;
   text-align: left;
 }
-input {
+
+input, mat-select{
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
@@ -68,6 +71,9 @@ input {
   transition: border-color 0.2s;
 }
 
+.date-picker{
+  display: flex;
+}
 
 button[type="submit"] {
   width: 100%;

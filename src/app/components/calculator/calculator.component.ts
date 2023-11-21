@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Cronograma} from "../../models/Cronograma";
 import {CronogramaService} from "../../services/cronograma.service";
+import { Router } from '@angular/router';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-calculator',
@@ -9,10 +11,13 @@ import {CronogramaService} from "../../services/cronograma.service";
 })
 export class CalculatorComponent implements OnInit{
 
+  minDate = new Date();
   cronograma: Cronograma = new Cronograma();
   customerId: number = 1; // Reemplaza con el valor correcto
 
-  constructor(private cronogramaService: CronogramaService) {}
+  constructor(private cronogramaService: CronogramaService, private router:Router,private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('en-GB')
+  }
 
   ngOnInit() {
     // Obtén el valor del customerId desde el sessionStorage
@@ -31,6 +36,7 @@ export class CalculatorComponent implements OnInit{
       .subscribe(
         (response) => {
           console.log('Respuesta del servidor:', response);
+          this.router.navigate(['/cronograma', this.customerId]);
         },
         (error) => {
           console.error('Error al enviar datos:', error);

@@ -30,6 +30,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ResponseComponent } from './components/response/response.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select'
 
 import { MatSortModule } from "@angular/material/sort";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -38,6 +39,7 @@ import { NewEditClienteComponent } from './components/new-edit-cliente/new-edit-
 import { MatDialogModule } from "@angular/material/dialog";
 import { CronogramaComponent } from './components/cronograma/cronograma.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
 
     NewEditClienteComponent,
     CronogramaComponent,
-    CotizacionesComponent
+    CotizacionesComponent,
+    ContactoComponent
 
   ],
   imports: [
@@ -93,7 +96,8 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
     MatSortModule,
     MatSnackBarModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
 
   ],
   providers: [],

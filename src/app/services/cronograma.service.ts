@@ -22,7 +22,7 @@ export class CronogramaService {
 
 
   calcularCronograma(customerId: number, cronograma: Cronograma): Observable<any> {
-    const url = `${this.apiUrl}/${customerId}/calculoCronograma`;
+    const url = `${this.apiUrl}/${customerId}/hallarcuota`;
     console.log('Datos a enviar:', cronograma);
     return this.http.post(url, cronograma);
   }
