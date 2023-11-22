@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Cronograma} from "../../models/Cronograma";
 import {CronogramaService} from "../../services/cronograma.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-calculator',
@@ -10,15 +11,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CalculatorComponent implements OnInit{
 
+  minDate = new Date()
   cronograma: Cronograma = new Cronograma();
-  customerId!: number; // Reemplaza con el valor correcto
+  customerId!: number;
 
-  constructor(private cronogramaService: CronogramaService,private router: Router,private activated: ActivatedRoute) {}
+  constructor(private cronogramaService: CronogramaService,private router: Router,private activated: ActivatedRoute,private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('en-GB')
+  }
 
   ngOnInit() {
     this.customerId = this.activated.snapshot.params['customerId'];
-
-    console.log('IDEDDDDD a enviar:', this.customerId);
   }
 
   enviarDatos(): void {

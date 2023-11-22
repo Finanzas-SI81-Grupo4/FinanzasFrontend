@@ -27,7 +27,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { ResponseComponent } from './components/response/response.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -39,6 +38,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { CronogramaComponent } from './components/cronograma/cronograma.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import { ContactoComponent } from './components/contacto/contacto.component'
 
 
 @NgModule({
@@ -51,12 +52,12 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     CatalogoComponent,
     ClientesComponent,
 
-    ResponseComponent,
     NavigationBarComponent,
 
     NewEditClienteComponent,
     CronogramaComponent,
-    CotizacionesComponent
+    CotizacionesComponent,
+    ContactoComponent
 
   ],
   imports: [
@@ -95,7 +96,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatSnackBarModule,
     NgbModule,
     MatDialogModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSelectModule
 
   ],
   providers: [],

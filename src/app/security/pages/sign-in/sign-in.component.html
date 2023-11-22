@@ -4,8 +4,8 @@
       <mat-card-content>
         <div class="header-login-card">
           <mat-card-header>
-            <mat-card-title class="welcome-text">Login</mat-card-title>
-            <mat-card-subtitle class="subtitle-text" class="custom-subtitle">We missed you! Please enter your details</mat-card-subtitle>
+            <mat-card-title class="welcome-text">Iniciar sesion</mat-card-title>
+            <mat-card-subtitle class="subtitle-text" class="custom-subtitle">Bienvenido! Por favor ingresa tus datos</mat-card-subtitle>
           </mat-card-header>
         </div>
 
@@ -16,14 +16,14 @@
                 <mat-label>Email</mat-label>
                 <input formControlName="email" matInput placeholder="Enter email address" required/>
                 <mat-error *ngIf="loginForm.controls['email'] && !loginForm.controls['email'].valid">
-                  Email is required
+                  Ingrese email
                 </mat-error>
               </mat-form-field>
             </div>
 
             <div class="form-group">
               <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Password</mat-label>
+                <mat-label>Contraseña</mat-label>
                 <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
                 <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
                          [attr.aria-pressed]="hide">
@@ -40,11 +40,11 @@
               </mat-form-field>
             </div>
 
-            <button class="btn-login">Sign in</button>
+            <button class="btn-login">Iniciar sesion</button>
 
             <div class="sign-up-content">
-              <label class="question-text">Don't have an account?</label>
-              <label class="sign-up-link"><a routerLink="/sign-up">Sign Up</a></label>
+              <label class="question-text">No tienes una cuenta?</label>
+              <label class="sign-up-link"><a routerLink="/sign-up">Registrarse</a></label>
             </div>
 
           </form>

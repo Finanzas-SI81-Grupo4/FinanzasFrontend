@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CronogramaService } from 'src/app/services/cronograma.service';
 import { ActivatedRoute } from '@angular/router';
+import {MatSort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-cotizaciones',
@@ -15,22 +17,25 @@ export class CotizacionesComponent implements OnInit{
   'precio','pgracia','tasa','pcuotainicial','id','accion'];
   dataSource!: MatTableDataSource<any>;
 
-    constructor(private cronogramaService: CronogramaService, private activated: ActivatedRoute) { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-    ngOnInit(): void {
-        this.getCotizacionesIdList();
+  constructor(private cronogramaService: CronogramaService, private activated: ActivatedRoute) { }
 
-    }
+  ngOnInit(): void {
+      this.getCotizacionesIdList();
+  }
 
-    getCotizacionesIdList(){
-      this.cliente_id = this.activated.snapshot.params['id'];
-      this.cronogramaService.getCronogramasByClientId(this.cliente_id).subscribe({
-        next:(res)=>{
-          this.dataSource=new MatTableDataSource(res);
-          console.log("Inserto",res)
-        },
-        error:console.log,
-      });
-    }
+  getCotizacionesIdList(){
+    this.cliente_id = this.activated.snapshot.params['id'];
+    this.cronogramaService.getCronogramasByClientId(this.cliente_id).subscribe({
+      next:(res)=>{
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.sort=this.sort;
+        this.dataSource.paginator=this.paginator;
+      },
+      error:console.log,
+    });
+  }
 
 }

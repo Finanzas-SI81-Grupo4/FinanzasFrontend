@@ -18,7 +18,9 @@ button{
   background-color: #572df0dc;
   color: white;
 }
-.mat-label{
+
+mat-label{
+  font-size: 1.08rem;
   color: white;
 }
 
