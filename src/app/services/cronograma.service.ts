@@ -8,7 +8,8 @@ import {Observable} from "rxjs";
 })
 export class CronogramaService {
 
-  private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/cuota';
+  //private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/cuota';
+  private apiUrl = 'http://backend-finanazas-production-3a94.up.railway.app/api/finanzasgrupo4/v1/cuota';
 
   constructor(private http: HttpClient) {}
 
