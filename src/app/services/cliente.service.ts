@@ -8,7 +8,8 @@ import { Cliente } from '../models/cliente';
 })
 export class ClienteService {
 
-  private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/Customer';
+//private apiUrl = 'http://localhost:8080/api/finanzasgrupo4/v1/Customer';
+  private apiUrl = 'http://backend-finanazas-production-3a94.up.railway.app/api/finanzasgrupo4/v1/Customer';
 
   constructor(private http:HttpClient) { }
 
