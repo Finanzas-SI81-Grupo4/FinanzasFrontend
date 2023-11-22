@@ -1,82 +1,4 @@
-:host {
-
-  --alice-blue-1: hsl(216, 38%, 95%);
-  --slate-blue: hsl(262, 60%, 57%);
-  --white: hsl(0, 0%, 100%);
-
-  --ff-nunito: 'Nunito', sans-serif;
-  --ff-open-sans: 'Open Sans', sans-serif;
-
-  --fs-1: 2.125rem;
-  --fs-2: 1.875rem;
-  --fs-3: 1.5rem;
-  --fs-4: 1.375rem;
-  --fs-5: 1.125rem;
-  --fs-6: 0.875rem;
-  --fs-7: 0.625rem;
-
-  --fw-400: 400;
-  --fw-600: 600;
-
-  --transition: 0.5s ease;
-
-  --section-padding: 50px;
-
-  --radius-10: 10px;
-  --radius-14: 14px;
-  --radius-18: 18px;
-
-  --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
-  --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
-
-}
-
-
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-li { list-style: none; }
-
-a { text-decoration: none; }
-
-a,
-img,
-span,
-label,
-input,
-button { display: block; }
-
-button,
-input {
-  background: none;
-  border: none;
-  font: inherit;
-}
-
-button { cursor: pointer; }
-
-input { width: 100%; }
-
-:host-context(html) {
-  font-family: var(--ff-open-sans);
-  font-size: 1rem;
-  line-height: 1.5;
-  scroll-behavior: smooth;
-}
-
-section  {
-  background: linear-gradient(to right top, #77c3fd, #67b8ff, #5dacff, #599fff, #5d91ff, #6a8eff, #768bfe, #8287fd, #908ffd, #9c98fc, #a8a1fc, #b3aafc);
-  overflow-x: hidden;
-}
-
-.container { padding-inline: 15px;
-
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+:host{--alice-blue-1:hsl(216,38%,95%);--slate-blue:hsl(262,60%,57%);--white:hsl(0,0%,100%);--ff-nunito:'Nunito',sans-serif;--ff-open-sans:'Open Sans',sans-serif;--fs-1:2.125rem;--fs-2:1.875rem;--fs-3:1.5rem;--fs-4:1.375rem;--fs-5:1.125rem;--fs-6:0.875rem;--fs-7:0.625rem;--fw-400:400;--fw-600:600;--transition:.5s ease;--section-padding:50px;--radius-10:10px;--radius-14:14px;--radius-18:18px;--shadow-1:3px 3px 9px hsla(240,14%,69%,.2);--shadow-2:3px 3px 9px hsla(204,92%,59%,.3);}*,:before,:after{margin:0;padding:0;box-sizing:border-box;}li{list-style:none;}a,img,span,label,input,button{display:block;}button,input{background:none;border:none;font:inherit;}button{cursor:pointer;}input{width:100%;}.section{background:linear-gradient(to right top,#77c3fd,#67b8ff,#5dacff,#599fff,#5d91ff,#6a8eff,#768bfe,#8287fd,#908ffd,#9c98fc,#a8a1fc,#b3aafc);overflow-x:hidden;}.container{padding-inline:15px;margin-top:50px;margin-bottom:50px;}
 
 button, a { transition: var(--transition); }
 
@@ -293,4 +215,4 @@ button, a { transition: var(--transition); }
 
   .featured-car-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-}
+}/* Resto de estilos... */
